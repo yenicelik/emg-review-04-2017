@@ -1,0 +1,221 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.22)  8 APR 2017 18:34
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**uistSample.tex
+(./uistSample.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (./uist.sty
+Style "UIST" <01 August 2005>.
+\copyrightnotice=\toks14
+\conf=\toks15
+\confinfo=\toks16
+\copyrtyr=\toks17
+\acmcopyr=\toks18
+\boilerplate=\toks19
+\copyrightetc=\toks20
+) (./uistSample.aux)
+\openout1 = `uistSample.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 6.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 40.
+
+Overfull \hbox (5.59981pt too wide) in paragraph at lines 43--45
+\OT1/ptm/m/n/10 ``This re-view is an ex-ten-sion to the sur-vey con-ducted by A
+drian
+ []
+
+
+Overfull \hbox (2.67693pt too wide) in paragraph at lines 59--59
+[]\helvixb NOISE SIG-NALS RE-SULT-ING FROM EMG MEA-SURE-MENT
+ []
+
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+]
+Overfull \hbox (1.99944pt too wide) in paragraph at lines 67--68
+\OT1/ptm/m/n/10 nearby mus-cles, which are not in the mon-i-tored mus-cle group
+,
+ []
+
+[2]
+Overfull \hbox (10.15686pt too wide) in paragraph at lines 97--97
+[]\helvixb GRID-CONFIGURATIONS OF sEMG SIG-NALS (Kilby, Prasad,
+ []
+
+
+Overfull \hbox (1.41919pt too wide) in paragraph at lines 103--104
+\OT1/ptm/m/n/10 pared with other types (Dim-itrov, Disselhorst-Klug, and Dim-
+ []
+
+
+Overfull \hbox (0.64009pt too wide) in paragraph at lines 103--104
+\OT1/ptm/m/n/10 itrova 2003). An in-tended con-se-quence of bipo-lar and higher
+-
+ []
+
+
+Overfull \hbox (3.58926pt too wide) in paragraph at lines 104--105
+\OT1/ptm/m/n/10 and pro-cess these through con-vo-lu-tional weight ma-tri-ces (
+usu-
+ []
+
+
+Overfull \hbox (4.77922pt too wide) in paragraph at lines 104--105
+\OT1/ptm/m/n/10 equiv-a-lent to the Lapla-cian op-er-a-tor and ap-prox-i-mates 
+second-
+ []
+
+
+Overfull \hbox (0.48997pt too wide) in paragraph at lines 110--110
+[]\helvixb HAND CLAS-SI-FI-CA-TION MEHOTDS US-ING EMG SIG-NALS 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 115.
+
+Overfull \hbox (13.67973pt too wide) in paragraph at lines 119--120
+[]\OT1/ptm/b/n/10 Ensemble tech-niques \OT1/ptm/m/n/10 us-ing mul-ti-ple fea-tu
+re sets even achieve
+ []
+
+[3]
+Overfull \hbox (9.27481pt too wide) in paragraph at lines 132--132
+[]\helvixb ACTUAL AP-PLI-CA-TIONS OF INTER/CROSS-SESSION sEMG 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 139.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 139.
+
+Underfull \vbox (badness 4291) has occurred while \output is active []
+
+
+Overfull \hbox (2.88867pt too wide) in paragraph at lines 143--146
+\OT1/ptm/m/n/10 cause the au-thors talk about state-of-the-art here aswell. Oth
+er
+ []
+
+
+Overfull \hbox (7.52985pt too wide) in paragraph at lines 143--146
+\OT1/ptm/m/n/10 2000)(Khushaba 2014). The com-mon prob-lem of inter-subject,
+ []
+
+
+Overfull \hbox (22.5181pt too wide) in paragraph at lines 143--146
+\OT1/ptm/m/n/10 subject-specifity and high vari-abil-ity of the at-tained data 
+(Castellini
+ []
+
+
+Overfull \hbox (2.80017pt too wide) in paragraph at lines 143--146
+\OT1/ptm/m/n/10 and Van Der Smagt 2009) (Fa-rina, Jiang, and Re-hbaum 2014).
+ []
+
+[4]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 185.
+
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 185.
+
+Overfull \hbox (14.27017pt too wide) in paragraph at lines 186--187
+[]\OT1/ptm/m/n/10 ActiveOne, BioSemi, Am-s-ter-dam, Nether-lands (Kilby, Prasad
+,
+ []
+
+
+Overfull \hbox (11.69896pt too wide) in paragraph at lines 191--192
+[]\OT1/ptm/m/n/10 ADC: EMG-USB 2, 256-channel EMG am-pli-fier, OT Bioelet-
+ []
+
+
+Overfull \hbox (1.83539pt too wide) in paragraph at lines 197--197
+[]\helvixb Appendix B: Avail-able datasets that in-clude cross-session
+ []
+
+Missing character: There is no Õ in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+[]\OT1/ptm/m/n/10 How to Clas-sify Works Us-ing ACMs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--219
+\OT1/ptm/m/n/10 Com-put-ing Clas-si-fi-ca-tion Sys-tem.
+ []
+
+[5] (./uistSample.aux) ) 
+Here is how much of TeX's memory you used:
+ 349 strings out of 493089
+ 4089 string characters out of 6134841
+ 65199 words of memory out of 5000000
+ 3882 multiletter control sequences out of 15000+600000
+ 23251 words of font info for 44 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 23i,9n,19p,1594b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/
+texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/urw/times/utmri8a.pfb>
+Output written on uistSample.pdf (5 pages, 133707 bytes).
+PDF statistics:
+ 65 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

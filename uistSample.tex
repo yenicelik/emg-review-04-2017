@@ -1,0 +1,227 @@
+\documentclass{article}
+
+\usepackage{times}
+\usepackage{uist}
+
+\begin{document}
+
+% --- Copyright notice ---
+\conferenceinfo{UIST'11}{October 16-19, 2011, Santa Barbara, CA, USA}
+\CopyrightYear{2011}
+\crdata{978-1-4503-0716-1/11/10}
+
+% Uncomment the following line to hide the copyright notice
+\toappear{}
+% ------------------------
+
+\bibliographystyle{plain}
+
+\title{Towards inter-session hand-gesture classification\\
+	   \small{A review on the state-of-the-art of the challenges and technologies using EMG\\}
+}
+
+%%
+%% Note on formatting authors at different institutions, as shown below:
+%% Change width arg (currently 7cm) to parbox commands as needed to
+%% accommodate widest lines, taking care not to overflow the 17.8cm line width.
+%% Add or delete parboxes for additional authors at different institutions.
+%% If additional authors won't fit in one row, you can add a "\\"  at the
+%% end of a parbox's closing "}" to have the next parbox start a new row.
+%% Be sure NOT to put any blank lines between parbox commands!
+%%
+
+\author{
+\parbox[t]{9cm}{\centering
+	     {\em David Yenicelik}\\
+	     ETH Zurich\\             
+	     yedavid@ethz.ch}
+}
+
+\maketitle
+
+\abstract
+``This review is an extension to the survey conducted by Adrian Spurr (Spurr, n.d.) on using electromyography (EMG) signals in machine learning algorithms, with a focus on HCI and hand pose estimation. This paper presents a broad overview of what has happened since 2015 on which the survey this paper is based on was conducted, but will overlap partially with the survey this is based on and older papers. The following is a copy of the abstract of the survey this review is based on:
+?This paper serves as a survey for using electromyography (EMG) signals in machine learning algorithms, with a focus on HCI and hand pose estimation. It gives an overview on the current applications and issues which have been tackled, lists problems occurring when using this type of input and names a series of open questions which have not been sufficiently addressed or solved in a satisfiability manner. It ends with a proposal for a novel feature for approximating continuous hand pose with EMG, motivated by the current literature available\ldots``
+
+\keywords{surface Electromyography, high-density EMG, cross-session, hand-gesture classification, active prosthetics, HCI }
+
+\tolerance=400
+  % makes some lines with lots of white space, but 	
+  % tends to prevent words from sticking out in the margin
+
+\section{INTRODUCTION}
+Create an Introduction maybe later
+
+\section{PROPERTIES OF sEMG SIGNALS}
+
+Electromyography (EMG) signals record electrical signals formed by muscles when these are activated. These signals originate from the peripheral nerve-system. Raw sEMG signals have peak-to-peak amplitudes of 0-2mV, and up until 10mV (Sulaiman et al. 2016) with a band frequency ranging from 0-1000Hz (Soderberg and Cook 1984). It is said that the band frequency of sEMG which includes significant information ranges from 20-500Hz (Boxtel 2001) (Kim, Kim, and Kim 2016) or 50-150 Hz (Sulaiman et al. 2016). sEMG signals are time and subject varying because of muscle fatigue, muscle length, muscle fibre architecture and level of effort (Kim, Kim, and Kim 2016) (Nazmi et al. 2016), as well as electrode shifts, changes in arm-posture and slow time-dependent changes such as electrode-skin impedance (Castellini and Van Der Smagt 2009) (Farina, Jiang, and Rehbaum 2014). The normalized sEMG amplitude is often obtained by non-linear division with the respective Maximum Voluntary Contraction (MVC) of the test subject (Boccia et al. 2015) (Martinez-Valdes et al. 2016). The MU firing rate follows a non-linear law (Luca and Hostage 2010) and the power of muscle contraction determines the number of MUs activated (Piccoli, Rainoldi, and Heitz 2014). There is an uncertain relation between EMG signals and muscle application (Dieterich et al. 2017). sEMG signals are time dependant (Kim, Kim, and Kim 2016) and due to the above mentioned reasons believed to be stochastic (Poo and Sundaraj 2010) (Rogers and MacIsaac 2013)(Thongpanja and Phinyomark 2013)(Clancy and Hogan 1999). 
+
+\section{NOISE SIGNALS RESULTING FROM EMG MEASUREMENT (NAZMI et al. 2016)}
+There are two main issues of concerns that influence the fidelity of the signals. Signal-to-noise ration examines the ratio of energy in EMG signals to energy in noise signals. Another problem however are pure noise signals, of whom there are different categories:
+
+\subsubsection{Inherent Noise in Electronics Equipment} in EMG Signals is caused by electrical equipment, but electrodes made of silver (Ag) and silver chloride (AgCl) are found to give an adequate signal-to-noise-ratio (SNR) and are electrically very steady. Furthermore, bigger electrode sizes imply decreased impedance. Generally, this type of noise can be eliminated using intelligence circuit design and high quality instruments (Nazmi et al. 2016). 
+\subsubsection{Ambient Noise} is 1x3 times bigger than the EMG signal of interest, which includes Power-Line Interference (PLI) arises from the 50-60Hz spectrum. A high pass filter can remove the interference if the frequency of the interference is high [quantify high!] (Nazmi et al. 2016). This is the most common kind of noise (Sulaiman et al. 2016)
+\subsubsection{Motion Artifacts} are caused by moving muscles, skin and spread of the innervation zone (IZ) electrode displacement (Reaz and Hussain 2006) (Chowdhury et al. 2013) (Masuda and Miyano 1985). Blood flow can also be a factor (Luca 2002). These can be reduced by proper design and setup of the system. For example, band pass filters of 500Hz cut-off frequency of high pass filter and low pass filter of 20Hz cut-off frequency already reduce these (Balbinot and Favieiro 2013) (El-Khoury et al. 2015).
+\subsubsection{Inherent instability of the signal} is caused by the stochastic nature of the EMG signal (Chowdhury et al. 2013). It can regarded as unwanted because this is unstable, usually lying within the range of 0-20 Hz (Nazmi et al. 2016), but can potentially be accepted without a de-noising structure within the system.
+\subsubsection{Electrocardiographic (ECG) Artifacts} arise due to an overlap of ECG and EMG frequency spectra, and their shared characteristics such as non-stationarity and varied temporal shape (Reaz and Hussain 2006) (Chowdhury et al. 2013). It is very difficult to remove ECG (Nazmi et al. 2016), but could potentially easily be removed, if ECG can effectively be measured, similar to a ground-voltage when using EMG. Bandpass filtering methods and mathematical morphology operator (MMO) were found to bring acceptable results in filtering (Abbaspour and Fallah 2017) (Nazmi et al. 2016).
+\subsubsection{Cross-Talk} is an EMG signal that arises when signals from nearby muscles, which are not in the monitored muscle group, is recorded by the electrode (Chowdhury et al. 2013). Choosing the IED to be 1-2cm, or the radius of the electrode, and also electrode-size carefully can reduce this noise effectively (Nazmi et al. 2016). 
+
+
+\section{MATHEMATICAL MODEL OF MEASURED EMG SIGNALS}
+There are hypothesis for different mathematical model that describe EMG?s, but simulating models lack realism in the sEMG signal simulation as well as MU firing rate strategies and force generation (Al Harrach et al. 2017). Some refer to probability density functions that can describe the amplitude of EMG signals (Thongpanja, Phinyomark, and Limsakul 2015) (Nazarpour, Al-Timemy, and Bugmann 2013) . The classification accuracy increases if the measurement takes between 128-500ms (Farina and Merletti 2000)  (Phinyomark, Quaine, and Charbonnier 2013) (Matsubara and Morimoto 2013). The resulting model is related to the electrode positioning (Nazmi et al. 2016), so it is not always possible to solely talk about the nature of EMG signals alone, but the measured EMG signals. Although the EMG signals are believed to have reproducible (Du et al. 2017) stochastic nature (Rogers and MacIsaac 2013)(Thongpanja and Phinyomark 2013)(Clancy and Hogan 1999), the investigated literature does not show consensus in the chosen Probability Density Function (PDF) of the signals (Nazmi et al. 2016). Although the central limit theorem proves that any dataset can be modelled as a normal distribution, it has been shown that the distribution of EMG generating signals is not a Gaussian one, as it is skewed towards zero (Hunter, Kearney, and Jones 1987)(Bilodeau, Cincera, and Arsenault 1997).
+
+De-noising is often closely tied to the application EMG is used for, with which there is no uniform de-noising strategy.
+
+
+\section{PARAMETERS FOR ELECTRODES (Kilby, Prasad, and Mawston 2016)}
+The following paragraphs enumerates and discusses the most often regarded factors. These are all factors that must be discussed when choosing an sEMG setup.
+
+\subsubsection{Electrode Design and Configuration} The most often used electrode materials  include pre-gelled silver (Ag) or silver chloride (AgCl). For dry configurations, no preference is detected (Kilby, Prasad, and Mawston 2016), but similar performance to gelled electrodes are shown ~[14]. Shapes are of minor significance. In this survey, we will regard dry electrodes when possible. SENIAM has recommendations on how to bring together electrodes, cables and a possible pre-amplifier into an sEMG signal (Kilby, Prasad, and Mawston 2016). 
+\subsubsection{Data Acquisition of sEMG signals} include sampling frequency and bit-resolution of the data acquisition card (Kilby, Prasad, and Mawston 2016). 
+\subsubsection{The choice of monopolar, bipolar, single-differential or double-differential} with a ground electron put on a bony area is another parameter to be set, especially in the case of grid-like structures. Monopoar detection provides the maximum information, but also includes fibre end effects. Bipolar detection provides a clear picture of any innervation and tenon zones. Double differential detection is the most suitable for estimating th muscle fibre conduction velocity (Kilby, Prasad, and Mawston 2016). 
+\subsubsection{Signal Pre-Processing of sEMG signals} (Kilby, Prasad, and Mawston 2016) can vary from simple bandpass filters [add reference here], butterworth filters [add reference here] or amplification of signals [add reference].  
+\subsubsection{Factors in the testing of the subject} include the muscle-specific deviations the experimental set-up, and the placement of the electrodes on the skin surface (Kilby, Prasad, and Mawston 2016)
+\subsubsection{Placement of electrodes [not done!!]} on the skin is a configuration step that is not much discussed in papers (Kilby, Prasad, and Mawston 2016) (Ghapanchizadeh et al. 2017). Auto-calibration features are desirable [add reference here, Amma, Microsoft, Kernel guys, etc.]. Studies are also conducted on the placement of the electrodes relative to IZ and TZ matter (Beck et al. 2009; Beck et al. 2008). Reference electrodes at bony parts are setup to measure differences more qualitatively [add reference here, Amma, Microsoft, Kernel guys, etc. Apparently, often, small muscles might contribute highly to gestures, but might not be measured well enough due to too low threshold levels of EMG (McIntosh et al. 2016) or the depth of the muscle (El-Khoury et al. 2015). An increased number of electrodes increases accuracy, but plateaus quickly after 100 placed electrodes (Amma et al. 2015).
+
+It must be clear to the user what the application of the sEMG is, and what the signal processing algorithms rely on. See appendix A for a list of manufacturers.
+
+
+\section{COMMON FEATURES USED (Nazmi et al. 2016)}
+Features can be divided into time-domain (TD), frequency-domain (FD) or time-frequency-domain (TFD) (Tsai et al. 2014) (Hogan and Mann 1980) (Englehart, Hudgins, and Parker 1999) (Nazmi et al. 2016). The following will discuss the most often used feature, the reader can refer to (Nazmi et al. 2016) for a table of features used in previous papers. None of the features selected seem to be an automated choice (Nazmi et al. 2016).
+\subsubsection{Root mean squared (RMS)} (Kendell and Lemaire 2012) (Nazmi et al. 2016) is a TD-feature that is often used with bipolar single EMGs when a relation between force and Muscle Unit (MU) is investigated upon [cite all the papers that do this]. For sEMG grids, experiments often average over multiple time frames of sEMG frames to receive one instantaneous image that represents this timeframe in one image. ?RMS appears to be the best parameters compared to the others, as it provides a quantitative measure for electrode selection? (Nazmi et al. 2016). It is often used to measure raw muscle activation, without specification of the MUs or locations of the muscles [add some references here].
+\subsubsection{Mean Frequency (MNF) and Median Power Frequency (MNP)} are FD-features and are often used to characterize EMG signals, especially for muscle contractions   (Merletti and Conte 1997), or to characterize fatigue over time (Phinyomark and Limsakul 2009). However, different MUs have different recruitment thresholds, and thus must be considered differently (Linnamo 2002) (Kossev and Christova 1998) (Nazmi et al. 2016). 
+
+Time-Frequency-Domain (TFD)-features can either be novel features or ensemble techniques of the above explained TD and FD features (Guo and Kareem 2016). However, these features suffer from the curse of dimensionality (Boccia et al. 2015), which can be reduced through dimensionality reduction techniques (Nazmi et al. 2016) or potentially an auto encoder finding an optimal embedding layer. [add this to the discussion rather maybe?]
+
+
+\section{GRID-CONFIGURATIONS OF sEMG SIGNALS (Kilby, Prasad, and Mawston 2016)}
+There are different types of grid-configurations for array-shaped sEMGs. A combination of multiple, for example 8 linear arrays put around the forearm is also possible [add reference here]. Sizes in arrays usually differ greatly but are between 1-10mm, either circular or elliptical in shape.
+SENIAM has no suggestions for the inter-electrode-distance (IED) sEMG?s in grids yet, but past experiments show that values between 2.5-20mm are common (Kilby, Prasad, and Mawston 2016).
+
+\subsubsection{Linear Array Electrodes} can use monopolar, bipolar and single (or more) differential configuration. Often stacked together columns wise into an arrays.
+\subsubsection{2D Array Electrodes} usually produce monopolar signals which are then further processed for analysis (Kilby, Prasad, and Mawston 2016). 
+\subsubsection{HD-sEMG} are generally electrodes that are uniform in two spatial axes and densely distributed. 2D multi-electrode configuration exhibit higher signals and lower cross-talk compared with other types (Dimitrov, Disselhorst-Klug, and Dimitrova 2003). An intended consequence of bipolar and higher-order montages, and of a short IED, is the suppression of the far-field activity  (Kilby, Prasad, and Mawston 2016).
+\subsubsection{HSR-sEMG electrodes} usually record monopolar signals and process these through convolutional weight matrices (usually 4 for centre and -1 for neighbouring pixels). This is equivalent to the Laplacian operator and approximates second-(or higher)-order differentials. Applied along the fibre direction, this can also approximate conduction velocity, and determine the location of innervation zones and tendons.
+
+\section{COMMON PRE-PROCESSING METHODS}
+Most studies don?t put much detail into the pre-processing stage, but it has repeatedly been shown that Butterworth filters with a cut-off frequency of 20-500Hz has been used (Boxtel 2001) (Kim, Kim, and Kim 2016). However, this ?noise? might also include useful patterns (Geng et al. 2016), and should be removed with care. Alternatives are bandpass filter with frequencies of 5-322Hz (Sulaiman et al. 2016) or similar (20-380Hz (Du et al. 2017)). Power-Line interference might be remove using a band-stop filter (45-55Hz second order Butterworth) (Du et al. 2017). The signal might also need to be converted from analogue to digital through a ADC converted (Sulaiman et al. 2016).  Segmentation techniques are relative to the application. It is open to discussion, if adjacent or overlapped windowing techniques are preferable (Nazmi et al. 2016). As always, finding the optimal features is also an open question, but there exists a preference.
+
+
+\section{HAND CLASSIFICATION MEHOTDS USING EMG SIGNALS}
+%%Maybe it is better to have one short paragraph talking details, and then one table showing multiple different methods.
+Some major work has been done in the field of within/intra-session (test and training-data taken from within one session and one subject), hand gesture classification. The majority of the work has been done in classification, while there also exists work in continuous estimation (El-Khoury et al. 2015). Some common algorithms that have shown good results include:
+
+\begin{enumerate}
+\item\textbf{Latent Dirichlet Algorithm (LDA)} is being deployed after using PCA to reduce to input feature set with a classification accuracy of 93.75% for [~~~number of gestures] different gestures [cite actual papers] (Nazmi et al. 2016).
+\item\textbf{Multi-Layer-Perceptron (MLP)} is being used achieving 99% accuracy for 6 different hand gestures to be classified (Khushaba and Al-Jumaily 2007) (Nazmi et al. 2016).
+\item\textbf{Fuzzy Logic (FL)} classifies the stages of contraction (start, middle, end) with 97% accuracy [cite actual papers] [cite number of gesture] (Nazmi et al. 2016).
+\item\textbf{Neuro-Fuzzy} systems (Khezri and Jahed 2011)
+\item\textbf{Ensemble techniques} using multiple feature sets even achieve 98.87% classification accuracy [look how many different hand gestures were included] [cite actual papers] (Nazmi et al. 2016).
+\item\textbf{Support Vector Machines (SVM)} is being deployed to classify instantaneous frames from sEMG measurement (Saponas et al. 2010), or are sometimes ensemble with pressure sensors (FSR) to also include wrist (McIntosh et al. 2016) or forearm [add reference with IMU] motion. For included pressure sensors accuracies range between 97.5% for wrist gestures and 94.0% for finger gestures for 14 gestures. For inertia sensors accuracies range between [must look this up again, should be in the IMU paper].
+\item\textbf{Deep Convolutional Neural Nets} can be used in ensemble over ~40 frames at 1000Hz, using simple majority voting to get classification accuracies of over 96.8% for over 40 gestures (Geng et al. 2016). Apparently, 150ms is the windows size suggested to consider, to classify a gesture (Geng et al. 2016). All this is possible because the HD-sEMG can be considered as an imaging tool (Merletti, Holobar, and Farina 2008). It is also reported that usually we have 8-11 firing MUs per second (Martinez-Valdes et al. 2016) which might satisfy why recordings of ~100ms is needed.
+\end{enumerate}
+
+Funnily, some algorithms, such as the Fuzzy Logic system, improve when the number of output classes are increased (El-Khoury et al. 2015)
+
+\section{APPLICATIONS OF INTER/CROSS-SESSION sEMG}
+As explained before, little work has been done in the application of cross/inter -session sEMG, or studies that spanned over multiple days/weeks (Martinez-Valdes et al. 2016). Usually, subjects of an experiment follow a calibration step, such as pinching each of their fingers at the beginning of the experiment (Saponas et al. 2010). Qualitative observations have shown that during gesture classification, errors occur when single mimic?s signals are dominant over the entire image (Saponas et al. 2010), with which signals having ?smaller? effects (such as moving the pinkie-finger compared to the full hand) are almost ignored. An argument was also that the user was not used to the device, with which he cannot optimally use it. Sometimes, only few Mus can be identified depending on the person who wore it (Martinez-Valdes et al. 2016). 
+It is qualitatively recorded that muscles covered by less adipose (fat) tissue usually present a higher number of correctly classified Mus (Holobar, Minetto, and Farina 2014). 
+A reference to a ?relaxed? stable state might be needed (Dieterich et al. 2017). Also, motions are sometimes detected through ultrasound before sEMG signals take place, however, this could also be a bug in the calibration, due to the algorithms, or because initial bursts were ignored (Dieterich et al. 2017). Some extensive studies have been done, correlating with ultrasound sensors, showing that different time-windows should be considered when classifying an EMG signal (Dieterich et al. 2017). 
+
+
+\section{ACTUAL APPLICATIONS OF INTER/CROSS-SESSION sEMG}
+Little work has been done on cross-session sEMG measurements. To find papers that included cross-session application, papers that included the term ?days, weeks? were taken into consideration. A benchmarking dataset is missing, and the biggest one contains 23 participants with [number of gestures] gestures each (Du et al. 2017). (Amma et al. 2015) pioneered auto-calibration, and a first end-to-end model has been created (Du et al. 2017), but the problem of cross-session hand gesture classification is still an open one. Both presented models recorded sEMG frames over time, and the appropriate output label. A list of datasets can be obtained in Appendix B. 
+(Amma et al. 2015) tried to measure sEMG in cross-session using a single calibration gesture. For this, he used a bony-area as a reference to shift the resulting sEMG image for calibration. The recognition of the bony-area is only approximated by the area of lowest muscle activity, and found through the watershed algorithm. Another method he used was a Gaussian Mixture Model (GMM) in 2 dimensions, which would identify areas of high activity, and shift the sEMG image accordingly. RMS was used to detect muscle activity, and the data is interpolated using bicubic interpolation. These methods resulted a calibration method with 75% accuracy in hand gesture classification. 
+(Du et al. 2017) trained a deep Convolutional Neural Net (CNN) using domain adaption (Patel, Gopalan, and Li 2015) techniques. These techniques rely of fine-tuning pre-trained networks (Donahue et al. 2014) . An algorithm that is being used is AdaBN, making the network more robust to inconsistencies in the covariance of the covariance data. AdaBN is similar to batch-normalization, which subtracts the mean and divides the standard-deviation  from the incoming layer [but accuracy in here]
+
+%%\(v = \dfrac{u-m}{s} \times g + b \)
+
+\( v = \frac{(u - \mu)}{\sigma} \times \gamma + \beta \)
+
+with the parameters  and  to be learned. This is regraded as an unsupervised method which does not require labeled sEMG data. During training, it must be ensured that the entire batch stems from the same session and same subject, otherwise, the learning parameters gamma and beta cannot be effectively learned. This model achieved state-of-the-art in cross-session with about ~80% accuracy. The auto-calibration takes about 10 seconds to take place.
+
+Look at paper (Patricia, Tommasit, and Caputo 2014), because the authors talk about state-of-the-art here aswell.
+Other work has also been done, but was less successful (Patricia, Tommasit, and Caputo 2014) (Ju, Kaelbling, and Singer 2000)(Khushaba 2014).
+The common problem of inter-subject, and even in cross-session, sEMG measurements is the high subject-specifity and high variability of the attained data (Castellini and Van Der Smagt 2009) (Farina, Jiang, and Rehbaum 2014). Data augmentation (Hargrove, Englehart, and Hudgins 2008) (Boschmann and Platzner 2012) and model adaption techniques (Amma et al. 2015) (Patricia, Tommasit, and Caputo 2014) (Ju, Kaelbling, and Singer 2000)(Khushaba 2014) have been devised for this. Due to this high subjectivity, the problem of cross-session hand gesture classification can be regarded as a multi-source domain adaption problem (Patel, Gopalan, and Li 2015). A negative correlation between the body-mass-index and gesture classification accuracy is noted (Atzori, Gijsberts, and Kuzborskij 2015).
+
+
+\section{DISCUSSION}
+To produce a wristband that can accurately classify hand gestures, a predictive model needs to be. The problem of creating this pre-trained model can be regarded as a supervised learning task. This pre-trained model can then be used as a starting point, from which calibration for individual subjects can automatically take place, potentially through unsupervised learning.
+
+\subsection{How to train a model} 
+
+\subsubsection{Increasing the dataset size:} It is often mentioned that increasing the number of data samples fed to a model will increase it?s accuracy, assuming the model has a high-enough capacity. As such, increasing the number of samples collected for a given gesture should result in an increased accuracy. Apart from that, it is assumed that there exists a finite number of different muscle types that the model has to adapt to.
+\subsubsection{Have non-mobile/ classification measure:} If it is possible to set up an effective classification measure which can be used naturally for many hours, much more training data can be collected. However, it should be noted that the current training data should vary in the number of subjects involved, not necessarily number of gestures occurring.
+
+\subsection{Models that could potentially work in classifying cross-session}
+\subsubsection{CNN with LSTMs or Residual/Highway Layers:} One could use CNN?s to bring condense the retained momentary image into a hidden feature vector that contains the condensed information about the image. This hidden feature vector can then be passed through multiple LSTMs or through a residual/highway layer for sequence analysis. [Maybe explain more about why this could be a good model] Time is probably an important factor to regard, so probably pay more attention here
+\subsubsection{A deep architecture within an adaption algorithm:} Reinforcement learning uses deep models to approximate the state-space and incorporates the results tabular algorithms. A deep model could also be used in this case to classify a gesture, and proven model adaption algorithms could be used to ?translate? or ?calibrate? the gestures. [Maybe explain more about why this could be a good model]
+\subsubsection{A deep architecture within an adaption algorithm:} Recommendation systems that generalize but also personalize have a deep and wide architecture that acts similar to an ensemble, except that backpropagation starts from the same end (one unified model). These kinds of models could potentially be useful, however, it could be difficult to implement these effective together with the CNN. Any other architecture that includes a part that personalized, and a part that generalizes could be optimal. Generally, looking at how other domains solve the problem of auto-calibration might be useful.  Maybe explain more about why this could be a good model]
+
+\subsection{Getting rid of noise}
+\subsubsection{Measure the noise at one place:} We can de-noise by measuring the noise at an independent location, and subtracting this from the EMG measured signals.
+Further research needs to be conducted in the following domains:
+\subsubsection{Image classification}
+\subsubsection{Video classification}
+\subsubsection{Domain Adaption}
+\subsubsection{Zero/One-Shot-Learning}
+\subsubsection{Accurate methods for hand gesture classification}
+
+\subsection{Potential ideas that could work, but might be risky:}
+\subsubsection{An armband with sufficient electrodes, and fully wrapping around the forearm:}
+\subsubsection{An armband with two segments:} Segment 1 improves Segment 2, and Segment 2 improves Segment 1. If there is a scenario in which competition play can be used, the armband can interchangeably improve itself, calibrating itself through time and optimizing for future use.
+
+
+\section{PROPOSAL}
+Start from a small gesture set that has many wide-spread features, but include many test session. Include more afterwards.
+
+% use \newpage to break the columns on the last page so they have equal length
+% if the break occurs in the middle of a paragraph, insert \linebreak before \newpage
+
+\newpage
+
+\section{Appendix A: Manufacturers list}
+\begin{itemize}
+\item Electrodes, mainly for linear arrays: LISiN-Specs Medica, Italy (Kilby, Prasad, and Mawston 2016)
+\item ActiveOne, BioSemi, Amsterdam, Netherlands (Kilby, Prasad, and Mawston 2016)
+\item Shinystone, LogOnU Inc. (Kim, Kim, and Kim 2016)
+\item Inertial Unit: IMU EBIMU24GV2, E2BOX Co. (Kim, Kim, and Kim 2016)
+\item Wireless SHIMMMER EMG (Sulaiman et al. 2016)
+\item SPES Medica, Salerno, Italy (Martinez-Valdes et al. 2016)
+\item ADC: EMG-USB 2, 256-channel EMG amplifier, OT Bioelettronica, Torino, Italy (Martinez-Valdes et al. 2016)
+\item Delsys Trigno Wireless EMG (El-Khoury et al. 2015)
+\item OT- Bioelettronica (Amma et al. 2015)
+\end{itemize}
+
+
+\section{Appendix B: Available datasets that include cross-session data}
+\begin{itemize}
+\item NinaPro - Sparse hand prosthetics dataset (Du et al. 2017)
+\item CSL-HDEMG - Near-to-realistic dataset [number of subjects and gestures] [Paper from Amma]
+\item CapgMyo - 23 participants and [number of gestures] gestures to classify (Du et al. 2017)
+\end{itemize}
+
+%%%	You can use bibtex if you like, but I've hardwired in these
+%%%	references to avoid sending you a separate .bib file.
+\begin{thebibliography}{9}
+
+\bibitem{ACMTerms} How to Classify Works Using ACMÕs Computing
+Classification System. {http://www.acm.org/class/how\_to\_use.html}.
+
+\bibitem{badenov91}  Badenov, B. Effects of prolonged use of WIMP user
+interfaces on Alces americana and Glaucomys volans.
+In {\em Proceedings of UIST '87}
+(February 30--April 1, Graceland, TN), ACM, NY, 1987, pp. 231--240.
+
+\bibitem{henry-etal92} Henry, T.R., Yeatts, A.K., Hudson, S.E., Myers, B.A.,
+and Feiner, S.K.  A nose gesture interface device: Extending virtual realities.
+{\em Presence 1}, 2 (Spring 1992), 258--261.
+
+\bibitem{GenderNeutral} Schwartz, M. Guidelines for Bias-Free Writing.
+Indiana University Press, Bloomington, IN, USA, 1995.
+
+\bibitem{zaranka81} Zaranka, W., Ed. {\em The Brand-X Anthology of Poetry:  A
+Parody Anthology.}  Apple-wood Books, Cambridge, MA, 1981.
+\end{thebibliography}
+
+\end{document}
