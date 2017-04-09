@@ -111,27 +111,33 @@ Most studies don?t put much detail into the pre-processing stage, but it has rep
 %%Maybe it is better to have one short paragraph talking details, and then one table showing multiple different methods.
 Some major work has been done in the field of within/intra-session (test and training-data taken from within one session and one subject), hand gesture classification. The majority of the work has been done in classification, while there also exists work in continuous estimation (El-Khoury et al. 2015). Some common algorithms that have shown good results include:
 
-\begin{enumerate}
-\item\textbf{Latent Dirichlet Algorithm (LDA)} is being deployed after using PCA to reduce to input feature set with a classification accuracy of 93.75% for [~~~number of gestures] different gestures [cite actual papers] (Nazmi et al. 2016).
-\item\textbf{Multi-Layer-Perceptron (MLP)} is being used achieving 99% accuracy for 6 different hand gestures to be classified (Khushaba and Al-Jumaily 2007) (Nazmi et al. 2016).
+\begin{itemize}
+\item \textbf{Latent Dirichlet Algorithm (LDA)} is being deployed after using PCA to reduce to input feature set with a classification accuracy of 93.75% for [~~~number of gestures] different gestures [cite actual papers] (Nazmi et al. 2016).
+\item \textbf{Multi-Layer-Perceptron (MLP)} is being used achieving 99% accuracy for 6 different hand gestures to be classified (Khushaba and Al-Jumaily 2007) (Nazmi et al. 2016).
 \item\textbf{Fuzzy Logic (FL)} classifies the stages of contraction (start, middle, end) with 97% accuracy [cite actual papers] [cite number of gesture] (Nazmi et al. 2016).
 \item\textbf{Neuro-Fuzzy} systems (Khezri and Jahed 2011)
 \item\textbf{Ensemble techniques} using multiple feature sets even achieve 98.87% classification accuracy [look how many different hand gestures were included] [cite actual papers] (Nazmi et al. 2016).
 \item\textbf{Support Vector Machines (SVM)} is being deployed to classify instantaneous frames from sEMG measurement (Saponas et al. 2010), or are sometimes ensemble with pressure sensors (FSR) to also include wrist (McIntosh et al. 2016) or forearm [add reference with IMU] motion. For included pressure sensors accuracies range between 97.5% for wrist gestures and 94.0% for finger gestures for 14 gestures. For inertia sensors accuracies range between [must look this up again, should be in the IMU paper].
 \item\textbf{Deep Convolutional Neural Nets} can be used in ensemble over ~40 frames at 1000Hz, using simple majority voting to get classification accuracies of over 96.8% for over 40 gestures (Geng et al. 2016). Apparently, 150ms is the windows size suggested to consider, to classify a gesture (Geng et al. 2016). All this is possible because the HD-sEMG can be considered as an imaging tool (Merletti, Holobar, and Farina 2008). It is also reported that usually we have 8-11 firing MUs per second (Martinez-Valdes et al. 2016) which might satisfy why recordings of ~100ms is needed.
-\end{enumerate}
+\end{itemize}
 
 Funnily, some algorithms, such as the Fuzzy Logic system, improve when the number of output classes are increased (El-Khoury et al. 2015)
 
 \section{APPLICATIONS OF INTER/CROSS-SESSION sEMG}
-As explained before, little work has been done in the application of cross/inter -session sEMG, or studies that spanned over multiple days/weeks (Martinez-Valdes et al. 2016). Usually, subjects of an experiment follow a calibration step, such as pinching each of their fingers at the beginning of the experiment (Saponas et al. 2010). Qualitative observations have shown that during gesture classification, errors occur when single mimic?s signals are dominant over the entire image (Saponas et al. 2010), with which signals having ?smaller? effects (such as moving the pinkie-finger compared to the full hand) are almost ignored. An argument was also that the user was not used to the device, with which he cannot optimally use it. Sometimes, only few Mus can be identified depending on the person who wore it (Martinez-Valdes et al. 2016). 
-It is qualitatively recorded that muscles covered by less adipose (fat) tissue usually present a higher number of correctly classified Mus (Holobar, Minetto, and Farina 2014). 
-A reference to a ?relaxed? stable state might be needed (Dieterich et al. 2017). Also, motions are sometimes detected through ultrasound before sEMG signals take place, however, this could also be a bug in the calibration, due to the algorithms, or because initial bursts were ignored (Dieterich et al. 2017). Some extensive studies have been done, correlating with ultrasound sensors, showing that different time-windows should be considered when classifying an EMG signal (Dieterich et al. 2017). 
+Also, motions are sometimes detected through ultrasound before sEMG signals take place, however, this could also be a bug in the calibration, due to the algorithms, or because initial bursts were ignored (Dieterich et al. 2017). Some extensive studies have been done, correlating with ultrasound sensors, showing that different time-windows should be considered when classifying an EMG signal (Dieterich et al. 2017). 
 
 
 \section{ACTUAL APPLICATIONS OF INTER/CROSS-SESSION sEMG}
-Little work has been done on cross-session sEMG measurements. To find papers that included cross-session application, papers that included the term ?days, weeks? were taken into consideration. A benchmarking dataset is missing, and the biggest one contains 23 participants with [number of gestures] gestures each (Du et al. 2017). (Amma et al. 2015) pioneered auto-calibration, and a first end-to-end model has been created (Du et al. 2017), but the problem of cross-session hand gesture classification is still an open one. Both presented models recorded sEMG frames over time, and the appropriate output label. A list of datasets can be obtained in Appendix B. 
+We will present challenges that must be overcome to solve the cross-session problem, and show past approaches that tried to solve this problem. Little work has been done on cross-session sEMG measurements, so  (Martinez-Valdes et al. 2016) to find papers that included cross-session application, papers that included the "term", "days" or "weeks" were taken into consideration.
+
+\subsection{Challenges}
+Often, different subjects have different muscle structures with which some muscles are more visible to the device than others. (Martinez-Valdes et al. 2016). A benchmarking dataset is missing, and the biggest one contains 23 participants with [number of gestures] gestures each (Du et al. 2017). The common problem of inter-subject, and even in cross-session, sEMG measurements is the high subject-specifity and high variability of the attained data (Castellini and Van Der Smagt 2009) (Farina, Jiang, and Rehbaum 2014). A negative correlation between the body-mass-index and gesture classification accuracy is noted (Atzori, Gijsberts, and Kuzborskij 2015) (Holobar, Minetto, and Farina 2014).
+
+\subsection{Approaches}
+Often, some kind of initial calibration (Saponas et al. 2010) or a reference to a relaxed state (Dieterich et al. 2017) is used in cross-session settings .  (Amma et al. 2015) pioneered auto-calibration, and a first end-to-end model has been created (Du et al. 2017), but the problem of cross-session hand gesture classification is still an open one. Both presented models recorded sEMG frames over time, and the appropriate output label. A list of datasets can be obtained in Appendix B. 
+
 (Amma et al. 2015) tried to measure sEMG in cross-session using a single calibration gesture. For this, he used a bony-area as a reference to shift the resulting sEMG image for calibration. The recognition of the bony-area is only approximated by the area of lowest muscle activity, and found through the watershed algorithm. Another method he used was a Gaussian Mixture Model (GMM) in 2 dimensions, which would identify areas of high activity, and shift the sEMG image accordingly. RMS was used to detect muscle activity, and the data is interpolated using bicubic interpolation. These methods resulted a calibration method with 75% accuracy in hand gesture classification. 
+
 (Du et al. 2017) trained a deep Convolutional Neural Net (CNN) using domain adaption (Patel, Gopalan, and Li 2015) techniques. These techniques rely of fine-tuning pre-trained networks (Donahue et al. 2014) . An algorithm that is being used is AdaBN, making the network more robust to inconsistencies in the covariance of the covariance data. AdaBN is similar to batch-normalization, which subtracts the mean and divides the standard-deviation  from the incoming layer [but accuracy in here]
 
 %%\(v = \dfrac{u-m}{s} \times g + b \)
@@ -140,43 +146,29 @@ Little work has been done on cross-session sEMG measurements. To find papers tha
 
 with the parameters  and  to be learned. This is regraded as an unsupervised method which does not require labeled sEMG data. During training, it must be ensured that the entire batch stems from the same session and same subject, otherwise, the learning parameters gamma and beta cannot be effectively learned. This model achieved state-of-the-art in cross-session with about ~80% accuracy. The auto-calibration takes about 10 seconds to take place.
 
-Look at paper (Patricia, Tommasit, and Caputo 2014), because the authors talk about state-of-the-art here aswell.
-Other work has also been done, but was less successful (Patricia, Tommasit, and Caputo 2014) (Ju, Kaelbling, and Singer 2000)(Khushaba 2014).
-The common problem of inter-subject, and even in cross-session, sEMG measurements is the high subject-specifity and high variability of the attained data (Castellini and Van Der Smagt 2009) (Farina, Jiang, and Rehbaum 2014). Data augmentation (Hargrove, Englehart, and Hudgins 2008) (Boschmann and Platzner 2012) and model adaption techniques (Amma et al. 2015) (Patricia, Tommasit, and Caputo 2014) (Ju, Kaelbling, and Singer 2000)(Khushaba 2014) have been devised for this. Due to this high subjectivity, the problem of cross-session hand gesture classification can be regarded as a multi-source domain adaption problem (Patel, Gopalan, and Li 2015). A negative correlation between the body-mass-index and gesture classification accuracy is noted (Atzori, Gijsberts, and Kuzborskij 2015).
+
+Other work has also been done, but was less successful (Patricia, Tommasit, and Caputo 2014) (Ju, Kaelbling, and Singer 2000)(Khushaba 2014), posing interesting ideas to consider however that mostly regard domain adaption as an option. Data augmentation (Hargrove, Englehart, and Hudgins 2008) (Boschmann and Platzner 2012) and model adaption techniques (Amma et al. 2015) (Patricia, Tommasit, and Caputo 2014) (Ju, Kaelbling, and Singer 2000)(Khushaba 2014) have been devised for this. Due to this high subjectivity, the problem of cross-session hand gesture classification can be regarded as a multi-source domain adaption problem (Patel, Gopalan, and Li 2015). 
 
 
 \section{DISCUSSION}
 To produce a wristband that can accurately classify hand gestures, a predictive model needs to be. The problem of creating this pre-trained model can be regarded as a supervised learning task. This pre-trained model can then be used as a starting point, from which calibration for individual subjects can automatically take place, potentially through unsupervised learning.
 
-\subsection{How to train a model} 
+\subsection{Future fields of research}
+Further research could be conducted in the following domains:
+\subsubsection{Image and Video classification: } is a viable path, for the reason that the sEMG signal produced is a 2D matrix of one-dimensional color-values, and as such, resembling an image. Video classification is viable as well, because the sEMG signal produced is time-dependent, a sequence in time, and due to the stochastic nature of the signal, multiple consecutive frames must be drawn to attention to draw a conclusion.
+\subsubsection{Domain Adaption} is a possible research field, as it is believed that changing sessions / subjects just shifts the classification task in space, but that the classification task stays the same. If enough different domains can be covered in the training data, potentially domain adaption techniques could give the small necessary push needed to realize cross-session hand-gesture classificaiton.
+\subsubsection{Zero-Shot-Learning} is a field close to domain adaption, but deals with minor or no labeled data. The goal is to achieve a high-enough learning effect given sparse data to draw personalized quality. This is interesting, because it is possible to get unlabeled data from the user: If it is possible to use this unlabeled data to improve the quality of the calibration, it might be possible to generalize between sessions, and potentially subjects.
+\subsubsection{Methods for hand gesture classification} are interesting because some methods might generalize to cross-session or cross-subject settings.
 
-\subsubsection{Increasing the dataset size:} It is often mentioned that increasing the number of data samples fed to a model will increase it?s accuracy, assuming the model has a high-enough capacity. As such, increasing the number of samples collected for a given gesture should result in an increased accuracy. Apart from that, it is assumed that there exists a finite number of different muscle types that the model has to adapt to.
-\subsubsection{Have non-mobile/ classification measure:} If it is possible to set up an effective classification measure which can be used naturally for many hours, much more training data can be collected. However, it should be noted that the current training data should vary in the number of subjects involved, not necessarily number of gestures occurring.
+\subsection{Possible next steps} 
+
+\subsubsection{Increasing the dataset size:} It is often mentioned that increasing the number of data samples fed to a model will increase it's accuracy, assuming the model has a high-enough capacity. As such, increasing the number of samples collected for a given gesture should result in an increased accuracy. Apart from that, it is assumed that there exists a finite number of different muscle types that the model has to adapt to. The dataset with the highest number of different subjects is the NinaPro dataset with about 30 subjects. However, as we can see from other deep architectures, this is usually a challenging small amount of data to rely good learning results for a deep architecture. As such, it would make sense to create a dataset that includes more different sessions (~100), and then potentially expand to having a higher number of different test subjects.
+\subsubsection{Have non-mobile/ classification measure:} If it is possible to set up an effective classification measure which can be used naturally for many hours, much more training data can be collected. However, it should be noted that the current training data should vary in the number of subjects involved, not necessarily number of gestures occurring. Also, any other armband-internal system that collects data, or concurrently improves the classification accuracy of the armband can help. (such as the 2-segment armband, where segment 2 helps classify it, and the neural net is actually trained/backpropagated on segment 1)
 
 \subsection{Models that could potentially work in classifying cross-session}
 \subsubsection{CNN with LSTMs or Residual/Highway Layers:} One could use CNN?s to bring condense the retained momentary image into a hidden feature vector that contains the condensed information about the image. This hidden feature vector can then be passed through multiple LSTMs or through a residual/highway layer for sequence analysis. [Maybe explain more about why this could be a good model] Time is probably an important factor to regard, so probably pay more attention here
 \subsubsection{A deep architecture within an adaption algorithm:} Reinforcement learning uses deep models to approximate the state-space and incorporates the results tabular algorithms. A deep model could also be used in this case to classify a gesture, and proven model adaption algorithms could be used to ?translate? or ?calibrate? the gestures. [Maybe explain more about why this could be a good model]
-\subsubsection{A deep architecture within an adaption algorithm:} Recommendation systems that generalize but also personalize have a deep and wide architecture that acts similar to an ensemble, except that backpropagation starts from the same end (one unified model). These kinds of models could potentially be useful, however, it could be difficult to implement these effective together with the CNN. Any other architecture that includes a part that personalized, and a part that generalizes could be optimal. Generally, looking at how other domains solve the problem of auto-calibration might be useful.  Maybe explain more about why this could be a good model]
-
-\subsection{Getting rid of noise}
-\subsubsection{Measure the noise at one place:} We can de-noise by measuring the noise at an independent location, and subtracting this from the EMG measured signals.
-Further research needs to be conducted in the following domains:
-\subsubsection{Image classification}
-\subsubsection{Video classification}
-\subsubsection{Domain Adaption}
-\subsubsection{Zero/One-Shot-Learning}
-\subsubsection{Accurate methods for hand gesture classification}
-
-\subsection{Potential ideas that could work, but might be risky:}
-\subsubsection{An armband with sufficient electrodes, and fully wrapping around the forearm:}
-\subsubsection{An armband with two segments:} Segment 1 improves Segment 2, and Segment 2 improves Segment 1. If there is a scenario in which competition play can be used, the armband can interchangeably improve itself, calibrating itself through time and optimizing for future use.
-
-
-\section{PROPOSAL}
-Start from a small gesture set that has many wide-spread features, but include many test session. Include more afterwards.
-
-% use \newpage to break the columns on the last page so they have equal length
-% if the break occurs in the middle of a paragraph, insert \linebreak before \newpage
+\subsubsection{Wide and Deep Nets:} Recommendation systems that generalize but also personalize have a deep and wide architecture that acts similar to an ensemble, except that backpropagation starts from the same end (one unified model). These kinds of models could potentially be useful, however, it could be difficult to implement these effective together with the CNN. Any other architecture that includes a part that personalized, and a part that generalizes could be optimal. Generally, looking at how other domains solve the problem of auto-calibration might be useful.  Maybe explain more about why this could be a good model]
 
 \newpage
 
