@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.22)  10 APR 2017 00:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.11.22)  10 APR 2017 11:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -61,13 +61,25 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 40.
 
-Overfull \hbox (5.59981pt too wide) in paragraph at lines 43--45
-\OT1/ptm/m/n/10 ``This re-view is an ex-ten-sion to the sur-vey con-ducted by A
-drian
+Overfull \hbox (1.15987pt too wide) in paragraph at lines 43--45
+\OT1/ptm/m/n/10 This re-view is an ex-ten-sion to the sur-vey con-ducted by Adr
+ian
  []
 
 
-Overfull \hbox (2.67693pt too wide) in paragraph at lines 59--59
+Overfull \hbox (3.71028pt too wide) in paragraph at lines 43--45
+\OT1/ptm/m/n/10 Spurr in 2015 (Spurr, n.d.) on us-ing elec-tromyo-g-ra-phy (EMG
+)
+ []
+
+
+Overfull \hbox (1.98917pt too wide) in paragraph at lines 53--54
+\OT1/ptm/m/n/10 formed by mus-cles that orig-i-nate from the pe-riph-eral nervo
+us-
+ []
+
+
+Overfull \hbox (2.67693pt too wide) in paragraph at lines 55--55
 []\helvixb NOISE SIG-NALS RE-SULT-ING FROM EMG MEA-SURE-MENT
  []
 
@@ -76,102 +88,113 @@ Overfull \hbox (2.67693pt too wide) in paragraph at lines 59--59
 
 
 ]
-Overfull \hbox (1.99944pt too wide) in paragraph at lines 67--68
-\OT1/ptm/m/n/10 nearby mus-cles, which are not in the mon-i-tored mus-cle group
-,
+Overfull \hbox (0.10654pt too wide) in paragraph at lines 63--64
+[]  \helvixo Cross-Talk[] \OT1/ptm/m/n/10 arises when sig-nals from nearby mus-
+cles, which
+ []
+
+
+Overfull \hbox (1.2051pt too wide) in paragraph at lines 73--74
+[]  \helvixo Elec-trode De-sign and Con-fig-u-ra-tion[] \OT1/ptm/m/n/10 Elec-tr
+ode ma-te-ri-als that
  []
 
 [2]
-Overfull \hbox (10.15686pt too wide) in paragraph at lines 97--97
+Overfull \hbox (10.15686pt too wide) in paragraph at lines 90--90
 []\helvixb GRID-CONFIGURATIONS OF sEMG SIG-NALS (Kilby, Prasad,
  []
 
 
-Overfull \hbox (1.41919pt too wide) in paragraph at lines 103--104
+Overfull \hbox (1.41919pt too wide) in paragraph at lines 96--97
 \OT1/ptm/m/n/10 pared with other types (Dim-itrov, Disselhorst-Klug, and Dim-
  []
 
 
-Overfull \hbox (0.64009pt too wide) in paragraph at lines 103--104
+Overfull \hbox (0.64009pt too wide) in paragraph at lines 96--97
 \OT1/ptm/m/n/10 itrova 2003). An in-tended con-se-quence of bipo-lar and higher
 -
  []
 
 
-Overfull \hbox (3.58926pt too wide) in paragraph at lines 104--105
+Overfull \hbox (3.58926pt too wide) in paragraph at lines 97--98
 \OT1/ptm/m/n/10 and pro-cess these through con-vo-lu-tional weight ma-tri-ces (
 usu-
  []
 
 
-Overfull \hbox (4.77922pt too wide) in paragraph at lines 104--105
+Overfull \hbox (4.77922pt too wide) in paragraph at lines 97--98
 \OT1/ptm/m/n/10 equiv-a-lent to the Lapla-cian op-er-a-tor and ap-prox-i-mates 
 second-
  []
 
 
-Overfull \hbox (0.48997pt too wide) in paragraph at lines 110--110
+Overfull \hbox (0.48997pt too wide) in paragraph at lines 103--103
 []\helvixb HAND CLAS-SI-FI-CA-TION MEHOTDS US-ING EMG SIG-NALS 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 115.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 108.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 115.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 108.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 115.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
 
-Overfull \hbox (13.67973pt too wide) in paragraph at lines 119--120
+Overfull \hbox (13.67973pt too wide) in paragraph at lines 111--112
 []\OT1/ptm/b/n/10 Ensemble tech-niques \OT1/ptm/m/n/10 us-ing mul-ti-ple fea-tu
 re sets even achieve
  []
 
 
-Overfull \hbox (9.27481pt too wide) in paragraph at lines 130--130
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Overfull \hbox (9.27481pt too wide) in paragraph at lines 122--122
 []\helvixb ACTUAL AP-PLI-CA-TIONS OF INTER/CROSS-SESSION sEMG 
  []
 
-[3]
-Overfull \hbox (0.93874pt too wide) in paragraph at lines 134--135
+
+Overfull \hbox (0.93874pt too wide) in paragraph at lines 127--128
 \OT1/ptm/m/n/10 Often, dif-fer-ent sub-jects have dif-fer-ent mus-cle struc-tur
 es with
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 145.
+(Font)              <7> on input line 136.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 145.
-[4]
-Overfull \hbox (14.27017pt too wide) in paragraph at lines 178--179
+(Font)              <5> on input line 136.
+[4] [5]
+Overfull \hbox (14.27017pt too wide) in paragraph at lines 169--170
 []\OT1/ptm/m/n/10 ActiveOne, BioSemi, Am-s-ter-dam, Nether-lands (Kilby, Prasad
 ,
  []
 
 
-Overfull \hbox (11.69896pt too wide) in paragraph at lines 183--184
+Overfull \hbox (11.69896pt too wide) in paragraph at lines 174--175
 []\OT1/ptm/m/n/10 ADC: EMG-USB 2, 256-channel EMG am-pli-fier, OT Bioelet-
  []
 
 
-Overfull \hbox (1.83539pt too wide) in paragraph at lines 189--189
+Overfull \hbox (1.83539pt too wide) in paragraph at lines 180--180
 []\helvixb Appendix B: Avail-able datasets that in-clude cross-session
  []
 
 Missing character: There is no Õ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--202
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 []\OT1/ptm/m/n/10 How to Clas-sify Works Us-ing ACMs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--202
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 \OT1/ptm/m/n/10 Com-put-ing Clas-si-fi-ca-tion Sys-tem.
  []
 
-[5] (./uistSample.aux) ) 
+[6
+
+] (./uistSample.aux) ) 
 Here is how much of TeX's memory you used:
  349 strings out of 493089
  4089 string characters out of 6134841
@@ -179,23 +202,23 @@ Here is how much of TeX's memory you used:
  3882 multiletter control sequences out of 15000+600000
  23251 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 23i,9n,19p,1594b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/bas
-e/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
-pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on uistSample.pdf (5 pages, 132774 bytes).
+ 23i,9n,19p,1573b,277s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/
+8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on uistSample.pdf (6 pages, 133735 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
