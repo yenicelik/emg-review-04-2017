@@ -1,0 +1,210 @@
+\begin{thebibliography}{10}
+
+\bibitem{Amma2015}
+Christoph Amma, Thomas Krings, Jonas B{\"{o}}er, and Tanja Schultz.
+\newblock {Advancing Muscle-Computer Interfaces with High-Density
+  Electromyography}.
+\newblock {\em Proceedings of the 33rd Annual ACM Conference on Human Factors
+  in Computing Systems - CHI '15}, pages 929--938, 2015.
+
+\bibitem{Balbinot2013}
+A~Balbinot and G~Favieiro.
+\newblock {A neuro-fuzzy system for characterization of arm movements}.
+\newblock {\em Sensors}, 2013.
+
+\bibitem{Beck2008}
+TW~Beck, TJ~Housh, JT~Cramer, and MH~Malek.
+\newblock {Electrode shift and normalization reduce the innervation zone's
+  influence on EMG.}
+\newblock {\em Medicine and science}, 2008.
+
+\bibitem{Beck2009}
+TW~Beck, TJ~Housh, JT~Cramer, and JR~Stout.
+\newblock {Electrode placement over the innervation zone affects the low-, not
+  the high-frequency portion of the EMG frequency spectrum}.
+\newblock {\em Journal of}, 2009.
+
+\bibitem{Bilodeau1997}
+M~Bilodeau, M~Cincera, and AB~Arsenault.
+\newblock {Normality and stationarity of EMG signals of elbow flexor muscles
+  during ramp and step isometric contractions}.
+\newblock {\em of Electromyography and {\ldots}}, 1997.
+
+\bibitem{Boccia2015}
+Gennaro Boccia, Davide Dardanello, Valeri Rosso, Luisa Pizzigalli, and Alberto
+  Rainoldi.
+\newblock {The application of sEMG in aging: A mini review}.
+\newblock {\em Gerontology}, 61(5):477--484, 2015.
+
+\bibitem{Boxtel2001}
+A~Boxtel.
+\newblock {Optimal signal bandwidth for the recording of surface EMG activity
+  of facial, jaw, oral, and neck muscles}.
+\newblock {\em Psychophysiology}, 2001.
+
+\bibitem{Castellini2009}
+Claudio Castellini and Patrick {Van Der Smagt}.
+\newblock {Surface EMG in advanced hand prosthetics}.
+\newblock {\em Biological Cybernetics}, 100(1):35--47, 2009.
+
+\bibitem{Chowdhury2013}
+Rubana~H. Chowdhury, Mamun B~I Reaz, Mohd Alauddin Bin~Mohd Ali, Ashrif A~A
+  Bakar, K.~Chellappan, and T.~G. Chang.
+\newblock {Surface electromyography signal processing and classification
+  techniques.}
+\newblock {\em Sensors (Basel, Switzerland)}, 13(9):12431--12466, 2013.
+
+\bibitem{Clancy1999}
+EA~Clancy and N~Hogan.
+\newblock {Probability density of the surface electromyogram and its relation
+  to amplitude detectors}.
+\newblock {\em IEEE Transactions on Biomedical}, 1999.
+
+\bibitem{Dieterich2017}
+Angela~V. Dieterich, Alberto Botter, Taian~Martins Vieira, Anneli Peolsson,
+  Frank Petzke, Paul Davey, and Deborah Falla.
+\newblock {Spatial variation and inconsistency between estimates of onset of
+  muscle activation from EMG and ultrasound}.
+\newblock {\em Scientific Reports}, 7(January):42011, 2017.
+
+\bibitem{Du2017}
+Yu~Du, Wenguang Jin, Wentao Wei, Yu~Hu, and Weidong Geng.
+\newblock {Surface EMG-Based Inter-Session Gesture Recognition Enhanced by Deep
+  Domain Adaptation}.
+\newblock {\em Sensors}, 17(3):458, 2017.
+
+\bibitem{El-Khoury2015}
+S.~El-Khoury, I.~Batzianoulis, C.~W. Antuvan, S.~Contu, L.~Masia, S.~Micera,
+  and A.~Billard.
+\newblock {EMG-based learning approach for estimating wrist motion}.
+\newblock {\em Proceedings of the Annual International Conference of the IEEE
+  Engineering in Medicine and Biology Society, EMBS}, 2015-Novem:6732--6735,
+  2015.
+
+\bibitem{Farina2014}
+D~Farina, N~Jiang, and H~Rehbaum.
+\newblock {The extraction of neural information from the surface EMG for the
+  control of upper-limb prostheses: emerging avenues and challenges}.
+\newblock {\em on Neural Systems {\ldots}}, 2014.
+
+\bibitem{Farina2000}
+D~Farina and R~Merletti.
+\newblock {Comparison of algorithms for estimation of EMG variables during
+  voluntary isometric contractions}.
+\newblock {\em Journal of Electromyography and Kinesiology}, 2000.
+
+\bibitem{Ghapanchizadeh2017}
+Hossein Ghapanchizadeh, Siti~A Ahmad, Juraiza Ishak, and Maged~S Al-Quraishi.
+\newblock {Review of surface electrode placement for recording electromyography
+  signals}.
+\newblock 2017.
+
+\bibitem{Hunter1987}
+IW~Hunter, RE~Kearney, and LA~Jones.
+\newblock {Estimation of the conduction velocity of muscle action potentials
+  using phase and impulse response function techniques}.
+\newblock {\em Medical and Biological Engineering}, 1987.
+
+\bibitem{Kilby2016}
+Jeff Kilby, Krishnamachar Prasad, and Grant Mawston.
+\newblock {Multi-channel surface electromyography electrodes: A review}.
+\newblock {\em IEEE Sensors Journal}, 16(14):5510--5519, 2016.
+
+\bibitem{Kim2016}
+Joowan Kim, Minkyu Kim, and Keehoon Kim.
+\newblock {Development of a wearable HCI controller through sEMG {\&} IMU
+  sensor fusion}.
+\newblock {\em 2016 13th International Conference on Ubiquitous Robots and
+  Ambient Intelligence, URAI 2016}, pages 83--87, 2016.
+
+\bibitem{Luca2010}
+CJ~De Luca and EC~Hostage.
+\newblock {Relationship between firing rate and recruitment threshold of
+  motoneurons in voluntary isometric contractions}.
+\newblock {\em Journal of neurophysiology}, 2010.
+
+\bibitem{Masuda1985}
+T~Masuda and H~Miyano.
+\newblock {The position of innervation zones in the biceps brachii investigated
+  by surface electromyography}.
+\newblock {\em IEEE transactions on}, 1985.
+
+\bibitem{Matsubara2013}
+T~Matsubara and J~Morimoto.
+\newblock {Bilinear modeling of EMG signals to extract user-independent
+  features for multiuser myoelectric interface}.
+\newblock {\em IEEE Transactions on Biomedical}, 2013.
+
+\bibitem{McIntosh2016}
+Jess McIntosh, Charlie McNeill, Mike Fraser, Frederic Kerber, Markus
+  L{\"{o}}chtefeld, and Antonio Kr{\"{u}}ger.
+\newblock {EMPress}.
+\newblock {\em Proceedings of the 2016 CHI Conference on Human Factors in
+  Computing Systems - CHI '16}, pages 2332--2342, 2016.
+
+\bibitem{Nazarpour2013}
+K~Nazarpour, AH~Al-Timemy, and G~Bugmann.
+\newblock {A note on the probability distribution function of the surface
+  electromyogram signal}.
+\newblock {\em Brain research}, 2013.
+
+\bibitem{Nazmi2016}
+Nurhazimah Nazmi, Mohd {Abdul Rahman}, Shin-Ichiroh Yamamoto, Siti Ahmad, Hairi
+  Zamzuri, and Saiful Mazlan.
+\newblock {A Review of Classification Techniques of EMG Signals during Isotonic
+  and Isometric Contractions}.
+\newblock {\em Sensors}, 16(8):1304, 2016.
+
+\bibitem{Piccoli2014}
+M~Beretta Piccoli, A~Rainoldi, and C~Heitz.
+\newblock {Innervation zone locations in 43 superficial muscles: toward a
+  standardization of electrode positioning}.
+\newblock {\em Muscle {\&}}, 2014.
+
+\bibitem{Poo2010}
+TS~Poo and K~Sundaraj.
+\newblock {Design and development of a low cost EMG signal acquisition system
+  using surface EMG electrode}.
+\newblock {\em and Systems (APCCAS), 2010 IEEE Asia {\ldots}}, 2010.
+
+\bibitem{Reaz2006}
+MBI Reaz and MS~Hussain.
+\newblock {Techniques of EMG signal analysis: detection, processing,
+  classification and applications}.
+\newblock {\em Biological}, 2006.
+
+\bibitem{Rogers2013}
+DR~Rogers and DT~MacIsaac.
+\newblock {A comparison of EMG-based muscle fatigue assessments during dynamic
+  contractions}.
+\newblock {\em Journal of Electromyography and Kinesiology}, 2013.
+
+\bibitem{Soderberg1984}
+GL~Soderberg and TM~Cook.
+\newblock {Electromyography in biomechanics}.
+\newblock {\em Phys Ther}, 1984.
+
+\bibitem{Spurr}
+Adrian Spurr.
+\newblock {Survey}.
+
+\bibitem{Sulaiman2016}
+Hamzah~Asyrani Sulaiman, Mohd~Azlishah Othman, Mohd Fairuz~Iskandar Othman,
+  Yahaya~Abd Rahim, and Naim~Che Pee.
+\newblock {Advanced computerv and communication engineering technology:
+  Proceedings of ICOCOE 2015}.
+\newblock {\em Lecture Notes in Electrical Engineering}, 362:567--575, 2016.
+
+\bibitem{Thongpanja2013}
+S~Thongpanja and A~Phinyomark.
+\newblock {Probability density of electromyography signal for different levels
+  of contraction of biceps brachii}.
+\newblock {\em (ECTI-CON), 2013 {\ldots}}, 2013.
+
+\bibitem{Thongpanja2015}
+S~Thongpanja, A~Phinyomark, and C~Limsakul.
+\newblock {Analysis of Electromyography in Dynamic Hand Motions Using
+  L-Kurtosis}.
+\newblock {\em Applied Mechanics}, 2015.
+
+\end{thebibliography}
