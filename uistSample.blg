@@ -1,56 +1,51 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: uistSample.aux
-The style file: plain.bst
+The style file: acm.bst
 Database file #1: library.bib
-Warning--I didn't find a database entry for "Martinez2016"
-Warning--I didn't find a database entry for "Luca2002"
-Warning--I didn't find a database entry for "Abbaspour2017"
-Warning--I didn't find a database entry for "Harrach2017"
-Warning--I didn't find a database entry for "Phinyomark2013"
-Warning--I didn't find a database entry for "Myers2015"
+Warning--empty year in Abbaspour
 Warning--empty journal in Ghapanchizadeh2017
+Warning--empty publisher in Linnamo2002
 Warning--empty journal in Spurr
-Warning--empty year in Spurr
-You've used 34 entries,
-            2118 wiz_defined-function locations,
-            714 strings with 10704 characters,
-and the built_in function-call counts, 10874 in all, are:
-= -- 1031
-> -- 665
-< -- 3
-+ -- 260
-- -- 226
-* -- 760
-:= -- 1939
-add.period$ -- 101
-call.type$ -- 34
-change.case$ -- 215
+You've used 62 entries,
+            2253 wiz_defined-function locations,
+            883 strings with 15541 characters,
+and the built_in function-call counts, 18086 in all, are:
+= -- 1663
+> -- 1089
+< -- 0
++ -- 448
+- -- 386
+* -- 1439
+:= -- 3177
+add.period$ -- 184
+call.type$ -- 62
+change.case$ -- 378
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 379
-empty$ -- 709
-format.name$ -- 226
-if$ -- 2163
+cite$ -- 66
+duplicate$ -- 560
+empty$ -- 1292
+format.name$ -- 386
+if$ -- 3573
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 34
-newline$ -- 172
-num.names$ -- 68
-pop$ -- 203
+int.to.str$ -- 62
+missing$ -- 63
+newline$ -- 311
+num.names$ -- 124
+pop$ -- 311
 preamble$ -- 1
-purify$ -- 181
+purify$ -- 317
 quote$ -- 0
-skip$ -- 284
+skip$ -- 355
 stack$ -- 0
-substring$ -- 470
-swap$ -- 59
-text.length$ -- 3
+substring$ -- 679
+swap$ -- 122
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 136
-warning$ -- 3
-while$ -- 92
-width$ -- 36
-write$ -- 350
-(There were 9 warnings)
+type$ -- 246
+warning$ -- 4
+while$ -- 152
+width$ -- 64
+write$ -- 572
+(There were 4 warnings)

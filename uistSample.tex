@@ -38,7 +38,13 @@
 \maketitle
 
 \abstract
-This review is an extension to the survey conducted by Adrian Spurr in 2015 \cite{Spurr} on using electromyography (EMG) signals in machine learning algorithms with a focus on HCI and hand pose estimation. This paper gives a broad overview of what has happened since 2015, but will partially overlap with contents presented in Spurr's survey. As such, the following is a copy of the abstract of Spurr's paper:
+This review is an extension to the survey conducted by Adrian 
+Spurr in 2015 \cite{Spurr} on using electromyography (EMG) 
+signals in machine learning algorithms with a focus on HCI and 
+hand pose estimation. This paper gives a broad overview 
+of what has happened since 2015, but will partially overlap 
+with contents presented in Spurr's survey. As such, the 
+following is a copy of the abstract of Spurr's paper:
 "This paper serves as a survey for using electromyography (EMG) signals in machine learning algorithms, with a focus on HCI and hand pose estimation. It gives an overview on the current applications and issues which have been tackled, lists problems occurring when using this type of input and names a series of open questions which have not been sufficiently addressed or solved in a satisfiability manner. It ends with a proposal for a novel feature for approximating continuous hand pose with EMG, motivated by the current literature available\ldots"
 
 \keywords{surface Electromyography, high-density EMG, cross-session, hand-gesture classification, active prosthetics, HCI }
@@ -94,7 +100,7 @@ SENIAM has no suggestions for the inter-electrode-distance (IED) in grids yet, b
 
 \subsubsection{Linear Array Electrodes} can use monopolar, bipolar and single (or more) differential configuration. These are often stacked together columns wise into an arrays.
 \subsubsection{2D Array Electrodes} usually produce monopolar signals which are then further processed for analysis \cite{Kilby2016}. 
-\subsubsection{HD-sEMG} are generally electrodes that are uniform in two spatial axes and densely distributed. 2D multi-electrode configuration exhibit higher signals and lower cross-talk compared with other types \cite{Dimitrov2003}. An intended consequence of bipolar and higher-order montages, and of a short IED, is the suppression of the far-field activity \cite{Kilby2016}.
+\subsubsection{HD-sEMG} are generally electrodes that are uniform in two spatial axes and densely distributed. 2D multi-electrode configuration exhibit higher signals and lower cross-talk compared with other types \cite{Dimitrov2003a}. An intended consequence of bipolar and higher-order montages, and of a short IED, is the suppression of the far-field activity \cite{Kilby2016}.
 \subsubsection{HSR-sEMG electrodes} usually record monopolar signals and process these through a convolution weight matrices (usually 4 for  and -1 for neighboring pixels). This is equivalent to the Laplace operator and approximates second-(or higher)-order differentials. Applied along the fiber direction, this can also approximate conduction velocity, and determine the location of innervation zones and tendons.
 
 \section{COMMON PRE-PROCESSING METHODS}
@@ -105,12 +111,12 @@ Most studies don't put much detail into the pre-processing stage, but it has rep
 Some major work has been done in the field of within/intra-session (test and training-data taken from within one session and one subject), hand gesture classification. The majority of the work has been done in classification, while there also exists work in continuous estimation \cite{El-Khoury2015}. Some common algorithms that have shown good results include:
 
 \begin{itemize}
-\item \textbf{Latent Dirichlet Algorithm (LDA)} is being deployed after using PCA to reduce to input feature set with a classification accuracy of 93.75\% for [~~~number of gestures] different gestures [cite actual papers] \cite{Nazmi2016}.
+\item \textbf{Linear Discriminant Analysis (LDA)} is being deployed after using PCA to reduce to input feature set with a classification accuracy of 93.75\% for [~~~number of gestures] different gestures [cite actual papers] \cite{Nazmi2016}.
 \item \textbf{Multi-Layer-Perceptron (MLP)} is being used achieving 99\% accuracy for 6 different hand gestures to be classified \cite{Khushaba2007} \cite{Nazmi2016}.
 \item\textbf{Fuzzy Logic (FL)} classifies the stages of contraction (start, middle, end) with 97\% accuracy [cite actual papers] [cite number of gesture] \cite{Nazmi2016}. Neuro-Fuzzy systems are an extension to this \cite{Khezri2011}.
 \item\textbf{Ensemble techniques} using multiple feature sets even achieve 98.87\% classification accuracy [look how many different hand gestures were included] [cite actual papers] \cite{Nazmi2016}.
 \item\textbf{Support Vector Machines (SVM)} is being deployed to classify instantaneous frames from sEMG measurement \cite{Saponas2010}, or are sometimes ensemble with pressure sensors (FSR) to also include wrist \cite{McIntosh2016} or forearm \cite{} motion. For included pressure sensors, the accuracy ranges between 97.5\% for wrist gestures and 94.0\% for finger gestures classifying between 14 gestures. For inertia sensors the accuracy ranges between [must look this up again, should be in the IMU paper].
-\item\textbf{Deep Convolutional Neural Nets} can be used in ensemble over ~40 frames at 1000Hz, using simple majority voting to get classification accuracies of over 96.8\% for over 40 gestures \cite{Geng2016}. Apparently, 150ms is the windows size suggested to consider, to classify a gesture \cite{Geng2016}. All this is possible because the HD-sEMG can be considered as an imaging tool \cite{Merletti2008}. It is also reported that usually we have 8-11 firing MUs per second \cite{Martinez2016} which might satisfy why recordings of ~100ms is needed.
+\item\textbf{Deep Convolutional Neural Nets} can be used in ensemble over ~40 frames at 1000Hz, using simple majority voting to get classification accuracies of over 96.8\% for over 40 gestures \cite{Geng2016}. Apparently, 150ms is the windows size suggested to consider, to classify a gesture \cite{Geng2016}. All this is possible because the HD-sEMG can be considered as an imaging tool \cite{Merletti2008}. It is also reported that usually we have 8-11 firing MUs per second \cite{Martinez-Valdes2016} which might satisfy why recordings of ~100ms is needed.
 \end{itemize}
 
 Funnily, some algorithms, such as the Fuzzy Logic system, improve when the number of output classes are increased \cite{El-Khoury2015}
@@ -119,17 +125,17 @@ Some work has also been done using ultra-sound sensors to help the EMG classify 
 
 
 \section{APPLICATIONS OF INTER/CROSS-SESSION sEMG}
-We will present challenges that must be overcome to solve the cross-session problem, and show past approaches that tried to solve this problem. Although (auto-)calibration features are desirable \cite{Amma2015}, little work has been done on cross-session sEMG measurements, so \cite{Martinez2016} to find papers that included cross-session application, papers that included the term "days" or "weeks" were taken into consideration.
+We will present challenges that must be overcome to solve the cross-session problem, and show past approaches that tried to solve this problem. Although (auto-)calibration features are desirable \cite{Amma2015}, little work has been done on cross-session sEMG measurements, so \cite{Martinez-Valdes2016} to find papers that included cross-session application, papers that included the term "days" or "weeks" were taken into consideration.
 
 \subsection{Challenges}
-Often, different subjects have different muscle structures with which some muscles are more visible to the device than others. \cite{Martinez2016}. A benchmarking dataset is missing, and the biggest one contains 23 participants with [number of gestures] gestures each \cite{Du2017}. The common problem of inter-subject, and even in cross-session, sEMG measurements is the high subject-specifity and high variability of the attained data \cite{Castellini2009} \cite{Farina2014}. A negative correlation between the body-mass-index and gesture classification accuracy is noted \cite{Atzori2015} \cite{Holobar2014}.
+Often, different subjects have different muscle structures with which some muscles are more visible to the device than others. \cite{Martinez-Valdes2016}. A benchmarking dataset is missing, and the biggest one contains 23 participants with [number of gestures] gestures each \cite{Du2017}. The common problem of inter-subject, and even in cross-session, sEMG measurements is the high subject-specifity and high variability of the attained data \cite{Castellini2009} \cite{Farina2014}. A negative correlation between the body-mass-index and gesture classification accuracy is noted \cite{Atzori2015} \cite{Holobar2014}.
 
 \subsection{Approaches}
 Often, some kind of initial calibration \cite{Saponas2010} or a reference to a relaxed state \cite{Dieterich2017} is used in cross-session settings. Amma et al. \cite{Amma2015} pioneered auto-calibration, and a first end-to-end model has been created \cite{Du2017}, but the problem of cross-session hand gesture classification is still an open one. Both presented models recorded sEMG frames over time, and the appropriate output label. A list of datasets can be obtained in Appendix B. 
 
 Amma et al. \cite{Amma2015} tried to measure sEMG in cross-session using a single calibration gesture. For this, he used a bony-area as a reference to shift the resulting sEMG image for calibration. The recognition of the bony-area is only approximated by the area of lowest muscle activity, and found through the watershed algorithm. Another method he used was a Gaussian Mixture Model (GMM) in 2 dimensions, which would identify areas of high activity, and shift the sEMG image accordingly. RMS was used to detect muscle activity, and the data is interpolated using bicubic interpolation. These methods resulted a calibration method with 75\% accuracy in hand gesture classification. 
 
-\cite{Du2017} trained a deep Convolutional Neural Net (CNN) using domain adaption \cite{Patel2015} techniques. These techniques rely of fine-tuning pre-trained networks \cite{Donahue2014} . An algorithm that is being used is AdaBN, making the network more robust to inconsistencies in the covariance of the covariance data. AdaBN is similar to batch-normalization, which subtracts the mean and divides the standard-deviation  from the incoming layer [but accuracy in here]
+\cite{Du2017} trained a deep Convolutional Neural Net (CNN) using domain adaption \cite{Patel2015} techniques. These techniques rely of fine-tuning pre-trained networks \cite{Donahue2014a} . An algorithm that is being used is AdaBN, making the network more robust to inconsistencies in the covariance of the covariance data. AdaBN is similar to batch-normalization, which subtracts the mean and divides the standard-deviation  from the incoming layer [but accuracy in here]
 
 \begin{center}
 \( v = \frac{(u - \mu)}{\sigma} \times \gamma + \beta \)
@@ -137,18 +143,20 @@ Amma et al. \cite{Amma2015} tried to measure sEMG in cross-session using a singl
 
 with the parameters $ \gamma $ and $ \beta $ to be learned. This is regraded as an unsupervised method which does not require labeled sEMG data. During training, it must be ensured that the entire batch stems from the same session and same subject, otherwise, the learning parameters gamma and beta cannot be effectively learned. This model achieved state-of-the-art in cross-session with about ~80\% accuracy. The auto-calibration takes about 10 seconds to take place.
 
-Other work has also been done, but was less successful \cite{Patricia2014} \cite{Ju2000} \cite{Khushaba2014}, showing that domain adaption techniques might be a viable option. Data augmentation \cite{Hargrove2008}  \cite{Boschmann2012} and model adaption techniques \cite{Amma2015} \cite{Patricia2014} \cite{Ju2000} \cite{Khushaba2014} have been devised for this. Due to the high subjectivity, the problem of cross-session hand gesture classification can be regarded as a multi-source domain adaption problem \cite{Patel2015}. 
+Other work has also been done, but was less successful \cite{Patricia2014a} \cite{Ju2000} \cite{Khushaba2014a}, showing that domain adaption techniques might be a viable option. Data augmentation \cite{Hargrove2008a}  \cite{Boschmann2012} and model adaption techniques \cite{Amma2015} \cite{Patricia2014a} \cite{Ju2000} \cite{Khushaba2014a} have been devised for this. Due to the high subjectivity, the problem of cross-session hand gesture classification can be regarded as a multi-source domain adaption problem \cite{Patel2015}. 
 
 
 \section{DISCUSSION}
 To produce a wristband that can accurately classify hand gestures, a predictive model needs to be created. The problem of creating this pre-trained model can be regarded as a supervised learning task. This pre-trained model can then be used as a starting point, from which calibration for individual subjects can automatically take place, potentially through unsupervised learning.
 
-\subsection{Future fields of research}
+\subsection{Future fields for research}
 Further research could be conducted in the following domains:
 \subsubsection{Image and Video classification: } is a viable path, for the reason that the sEMG signal produced is a 2D matrix of one-dimensional color-values, and as such, is resembling an image. Video classification is viable as well, because the sEMG signal produced is a time-dependent sequence, and due to the stochastic nature of the signal, multiple consecutive frames must be regarded to draw conclusion.
 \subsubsection{Domain Adaption} is a possible research field, as it is believed that changing sessions / subjects just shift the classification task in space. This means that the problem is the exact same one, just shifted in the problem domain. If enough different domains can be covered in the training data, the domain adaption problem can be easy. If unlabeled data is present, domain adaption techniques could give the small necessary push needed to realize cross-session hand-gesture classification.
 \subsubsection{Zero-Shot-Learning} is a field close to domain adaption, but deals with minor or no labeled data. The goal is to achieve a high-enough learning effect given sparse data to draw personalized quality. This is interesting, because it is possible to get unlabeled data from the user: If it is possible to use this unlabeled data to improve the quality of the calibration, it might be possible to generalize between sessions, and potentially subjects.
 \subsubsection{Methods for hand gesture classification} are interesting because some methods might generalize well to cross-session or cross-subject settings.
+
+Generally, any other domain looking at the problem of auto-calibration might be useful in bringing new ideas.
 
 \subsection{Possible next steps} 
 
@@ -156,9 +164,14 @@ Further research could be conducted in the following domains:
 \subsubsection{Have non-mobile/ classification measure:} If it is possible to set up an effective classification measure which can be used naturally for many hours, much more training data can be collected. However, it should be noted that the current training data should vary in the number of sessions/subjects involved, not necessarily number of gestures occurring. Also, any other armband-internal system that collects data or concurrently improves the classification accuracy of the armband can help. (such as the 2-segment armband, where segment 2 helps classify it, and the neural net is actually trained/backpropagated on segment 1)
 
 \subsection{Models that could potentially work in classifying cross-session}
-\subsubsection{CNN with LSTMs or Residual/Highway Layers:} One could use CNNs to condense the momentary image into a hidden feature vector that represents the image. This hidden feature vector can then be passed through multiple LSTMs or through a residual/highway layer for sequence analysis. [Maybe explain more about why this could be a good model] [Explain why individual features are useful, not the entire model] The feature 'Time' is probably an important factor to regard, so probably pay more attention here.
-\subsubsection{A deep architecture within an adaption algorithm:} Reinforcement learning uses deep models to approximate the state-space and incorporates the results tabular algorithms. A deep model could also be used in this case to classify a gesture, and proven model adaption algorithms could be used to translate or calibrate the gestures. [Maybe explain more about why this could be a good model]
-\subsubsection{Wide and Deep Nets:} Recommendation systems that generalize but also personalize have a deep and wide architecture that acts similar to an ensemble, except that backpropagation starts from the same end (one unified model). These kinds of models could potentially be useful, however, it could be difficult to implement these effective together with the CNN. Any other architecture that includes a part that personalized, and a part that generalizes could be optimal. Generally, looking at how other domains solve the problem of auto-calibration might be useful. [Maybe explain more about why this could be a good model]
+\subsubsection{CNNs with a combination of LSTMs or Residual/Highway Layers:} As above mentioned, the task of classifying EMG signals is similar to the task of image classification. CNNs are the most popular choice in computer vision tasks, making the trained model resistance to small perturbations in the image. 
+It is also important to regard the EMG signal as an integral sequences to classify the EMG images. LSTMs are the most popular choice in sequence-processing tasks and can capture long-term dependencies of currently up to 256 sequence-elements effectively. 
+One could use CNNs to condense the momentary image into a hidden feature vector that represents the image. This hidden feature vector could then potentially be passed through a layer of LSTMs or through a residual/highway layer for sequence analysis.
+
+\subsubsection{A deep architecture within an adaption algorithm:} Domain adaption algorithms have shown to improve the accuracy of the model. However, these algorithms must be fed with some well-chosen feature-vectors. Within the field of reinforcement learning, deep models are used to approximate the state-space (feature-vectors) and incorporate these results within tabular algorithms. A deep model could also be used in this case to classify gestures, and proven model adaption algorithms could be used to translate or calibrate the gestures.
+
+\subsubsection{Wide and Deep Nets:} EMG signals have a part that can be generalized to all users, but also rely on personalization. An alternative to choosing domain adaption algorithms is to use Wide and Deep Nets.
+Recommendation systems that generalize but also personalize have a deep and wide architecture that acts similar to an ensemble, except that backpropagation starts from the same end (one unified model). Any other architecture that includes a part that personalized, and a part that generalizes could be optimal. 
 
 \newpage
 
@@ -178,36 +191,20 @@ Further research could be conducted in the following domains:
 
 \section{Appendix B: Available datasets that include cross-session data}
 \begin{itemize}
-\item NinaPro - Sparse hand prosthetics dataset (Du et al. 2017)
-\item CSL-HDEMG - Near-to-realistic dataset [number of subjects and gestures] [Paper from Amma]
-\item CapgMyo - 23 participants and [number of gestures] gestures to classify (Du et al. 2017)
+\item NinaPro - Sparse hand prosthetics dataset \cite{Du2017}
+\item CSL-HDEMG - Near-to-realistic dataset [number of subjects and gestures] \cite{Amma2015}
+\item CapgMyo - 23 participants and [number of gestures] gestures to classify \cite{Du2017}
 \end{itemize}
 
 %%%	You can use bibtex if you like, but I've hardwired in these
 %%%	references to avoid sending you a separate .bib file.
 
 \bibliography{library}
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
 
-\begin{thebibliography}{9}
-
-\bibitem{ACMTerms} How to Classify Works Using ACMÕs Computing
-Classification System. {http://www.acm.org/class/how\_to\_use.html}.
-
-\bibitem{badenov91}  Badenov, B. Effects of prolonged use of WIMP user
-interfaces on Alces americana and Glaucomys volans.
-In {\em Proceedings of UIST '87}
-(February 30--April 1, Graceland, TN), ACM, NY, 1987, pp. 231--240.
-
-\bibitem{henry-etal92} Henry, T.R., Yeatts, A.K., Hudson, S.E., Myers, B.A.,
-and Feiner, S.K.  A nose gesture interface device: Extending virtual realities.
-{\em Presence 1}, 2 (Spring 1992), 258--261.
-
-\bibitem{GenderNeutral} Schwartz, M. Guidelines for Bias-Free Writing.
-Indiana University Press, Bloomington, IN, USA, 1995.
-
-\bibitem{zaranka81} Zaranka, W., Ed. {\em The Brand-X Anthology of Poetry:  A
-Parody Anthology.}  Apple-wood Books, Cambridge, MA, 1981.
-\end{thebibliography}
+%%
+%%\begin{thebibliography}{9}
+%%
+%%\end{thebibliography}
 
 \end{document}
